@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111111">
   <title>SoleStreet | Step Into Style</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
 
+<body>
   <div class="announcement">
     STEP INTO STYLE — YOUR NEXT FAVOURITE PAIR AWAITS
   </div>
 
   <header class="navbar">
-    <a class="logo" href="#">SOLE<span>STREET.</span></a>
+    <a class="logo" href="#home">SOLE<span>STREET.</span></a>
 
     <nav>
       <a href="#home">Home</a>
       <a href="#products">Sneakers</a>
-      <a href="#about">About</a>
+      <a href="#wishlist">Wishlist</a>
     </nav>
 
-    <button class="cart-button" id="cart-toggle">
-      Bag <span id="cart-count">0</span>
-    </button>
+    <div class="header-actions">
+      <button class="wishlist-button" id="wishlist-toggle">
+        ♡ <span id="wishlist-count">0</span>
+      </button>
+      <button class="cart-button" id="cart-toggle">
+        Bag <span id="cart-count">0</span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -42,8 +49,7 @@
       <div class="hero-image">
         <img
           src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1000&q=85"
-          alt="Featured sneaker"
-        >
+          alt="Featured sneaker">
         <span class="image-label">FIND YOUR NEXT PAIR.</span>
       </div>
     </section>
@@ -57,9 +63,46 @@
         <p>Good shoes. Better moves.</p>
       </div>
 
-      <div class="product-grid" id="product-grid">
-        <!-- Products will be added by JavaScript -->
+      <div class="shop-tools">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search sneakers..."
+          aria-label="Search sneakers">
+
+        <select id="brand-filter" aria-label="Filter by brand">
+          <option value="all">All brands</option>
+          <option value="Nike">Nike</option>
+          <option value="Adidas">Adidas</option>
+          <option value="Puma">Puma</option>
+          <option value="New Balance">New Balance</option>
+        </select>
+
+        <select id="sort-filter" aria-label="Sort sneakers">
+          <option value="default">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
       </div>
+
+      <p id="results-message" class="results-message"></p>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="products-section wishlist-section" id="wishlist">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+          <h2>My Wishlist<span>.</span></h2>
+        </div>
+        <p>Your favourite sneakers in one place.</p>
+      </div>
+
+      <div class="product-grid" id="wishlist-grid"></div>
+      <p id="wishlist-empty" class="empty-wishlist">
+        You haven't saved any favourites yet. Tap ♡ on a sneaker to save it!
+      </p>
     </section>
 
     <section class="about-section" id="about">
@@ -70,11 +113,12 @@
   </main>
 
   <footer>
-    <a class="logo" href="#">SOLE<span>STREET.</span></a>
+    <a class="logo" href="#home">SOLE<span>STREET.</span></a>
     <p>Find your style. Own your street.</p>
     <p>© 2026 SoleStreet. All rights reserved.</p>
   </footer>
 
+  <!-- Shopping cart -->
   <div class="cart-overlay" id="cart-overlay"></div>
 
   <aside class="cart-panel" id="cart-panel" aria-label="Shopping cart">
@@ -99,5 +143,48 @@
     </div>
   </aside>
 
+  <!-- Demo checkout page -->
+  <div class="checkout-overlay" id="checkout-overlay">
+    <section class="checkout-modal">
+      <div class="cart-header">
+        <h2>Checkout<span>.</span></h2>
+        <button id="checkout-close" aria-label="Close checkout">✕</button>
+      </div>
+
+      <p class="checkout-description">
+        Review your order and enter sample details to test the demo.
+      </p>
+
+      <form id="checkout-form">
+        <label for="customer-name">Full name</label>
+        <input id="customer-name" name="customer-name"
+          type="text" placeholder="Your name" required>
+
+        <label for="customer-email">Email</label>
+        <input id="customer-email" name="customer-email"
+          type="email" placeholder="you@example.com" required>
+
+        <label for="customer-address">Delivery address</label>
+        <textarea id="customer-address" name="customer-address"
+          placeholder="Sample delivery address" required></textarea>
+
+        <div class="checkout-summary">
+          <span>Order total</span>
+          <strong id="checkout-total">Rs. 0</strong>
+        </div>
+
+        <button class="checkout-button" type="submit">
+          PLACE DEMO ORDER
+        </button>
+      </form>
+
+      <p class="cart-note">
+        Practice checkout only. No order is sent and no payment is taken.
+        Use fictional details when testing.
+      </p>
+
+      <div id="checkout-message" role="status"></div>
+    </section>
+  </div>
 </body>
 </html>
