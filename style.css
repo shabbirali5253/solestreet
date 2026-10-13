@@ -600,3 +600,277 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===== SOLESTREET NEW FEATURES ===== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wishlist-button {
+  background: white;
+  color: #111;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 10px 13px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.wishlist-button:hover {
+  background: #f5f5f2;
+  transform: translateY(-2px);
+}
+
+.shop-tools {
+  display: grid;
+  grid-template-columns: 1fr 190px 210px;
+  gap: 12px;
+  margin: 28px 0 12px;
+}
+
+.shop-tools input,
+.shop-tools select {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.shop-tools input:focus,
+.shop-tools select:focus {
+  border-color: #8bb800;
+  box-shadow: 0 0 0 2px rgba(139, 184, 0, 0.12);
+}
+
+.results-message {
+  color: #777;
+  font-size: 12px;
+  margin: 16px 0 20px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-image {
+  position: relative;
+}
+
+.product-brand {
+  color: #777;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favorite-button {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid #ddd;
+  background: white;
+  color: #111;
+  font-size: 19px;
+  transition: 0.2s;
+}
+
+.favorite-button:hover,
+.favorite-button.active {
+  background: #d4ff45;
+  border-color: #d4ff45;
+  transform: scale(1.04);
+}
+
+.size-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 13px 0 7px;
+}
+
+.size-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #111;
+  font: inherit;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.size-select:focus {
+  outline: 1px solid #8bb800;
+}
+
+.add-button {
+  flex: 1;
+  min-height: 36px;
+}
+
+.wishlist-section {
+  background: #fafaf8;
+}
+
+.empty-wishlist {
+  color: #777;
+  font-size: 13px;
+  line-height: 1.8;
+  padding: 20px 0;
+}
+
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+
+.checkout-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkout-modal {
+  width: min(480px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  padding: 28px;
+  transform: translateY(16px);
+  transition: transform 0.25s;
+}
+
+.checkout-overlay.open .checkout-modal {
+  transform: translateY(0);
+}
+
+.checkout-modal .cart-header h2 span {
+  color: #8bb800;
+}
+
+.checkout-description {
+  color: #777;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+
+#checkout-form label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 15px 0 7px;
+}
+
+#checkout-form input,
+#checkout-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 12px;
+  font: inherit;
+  font-size: 12px;
+  background: white;
+  color: #111;
+  border-radius: 0;
+}
+
+#checkout-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+#checkout-form input:focus,
+#checkout-form textarea:focus {
+  outline: 1px solid #8bb800;
+  border-color: #8bb800;
+}
+
+.checkout-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+#checkout-form .checkout-button {
+  width: 100%;
+}
+
+#checkout-message {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+#checkout-message:empty {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .shop-tools {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shop-tools input {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-actions {
+    gap: 6px;
+  }
+
+  .wishlist-button {
+    padding: 8px;
+  }
+
+  .shop-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-tools input {
+    grid-column: auto;
+  }
+
+  .product-actions {
+    gap: 6px;
+  }
+
+  .favorite-button {
+    width: 32px;
+    height: 34px;
+  }
+
+  .checkout-modal {
+    padding: 20px;
+  }
+}
