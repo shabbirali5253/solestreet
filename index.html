@@ -1,115 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoleStreet | Sneakers for Every Step</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>SoleStreet | Step Into Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <a href="#home" class="logo">SOLE<span>STREET.</span></a>
+  <div class="announcement">
+    STEP INTO STYLE — YOUR NEXT FAVOURITE PAIR AWAITS
+  </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#about">About</a>
-        </nav>
+  <header class="navbar">
+    <a class="logo" href="#">SOLE<span>STREET.</span></a>
 
-        <a href="#shop" class="header-btn">Shop Now ↗</a>
-    </header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Sneakers</a>
+      <a href="#about">About</a>
+    </nav>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <p class="tag">STEP INTO YOUR STYLE</p>
-                <h1>Own your<br>next <span>step.</span></h1>
-                <p>
-                    Sneakers that match your energy.
-                    Discover your next favourite pair at SoleStreet.
-                </p>
-                <a href="#shop" class="btn">Explore Collection ↗</a>
-            </div>
+    <button class="cart-button" id="cart-toggle">
+      Bag <span id="cart-count">0</span>
+    </button>
+  </header>
 
-            <div class="hero-image">
-                <img
-                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
-                    alt="Red athletic sneaker">
-            </div>
-        </section>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">THE NEXT STEP STARTS HERE</p>
+        <h1>YOUR STYLE.<br>YOUR <span>STREET.</span></h1>
+        <p>Discover sneakers that make every step count.</p>
+        <a href="#products" class="primary-button">SHOP SNEAKERS ↗</a>
+      </div>
 
-        <section class="shop" id="shop">
-            <p class="tag">FRESH PICKS</p>
-            <h2>Find your <span>pair.</span></h2>
-            <p class="section-text">
-                Everyday essentials. Standout styles.
-            </p>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1000&q=85"
+          alt="Featured sneaker"
+        >
+        <span class="image-label">FIND YOUR NEXT PAIR.</span>
+      </div>
+    </section>
 
-            <div class="products">
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-                        alt="Red runner sneakers">
-                    <div class="product-info">
-                        <h3>Street Runner</h3>
-                        <p>Everyday Sneakers</p>
-                        <strong>Rs. 4,500</strong>
-                        <a href="#contact" class="product-btn">View Details ↗</a>
-                    </div>
-                </article>
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CURATED FOR YOU</p>
+          <h2>Fresh Kicks<span>.</span></h2>
+        </div>
+        <p>Good shoes. Better moves.</p>
+      </div>
 
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80"
-                        alt="Classic casual sneakers">
-                    <div class="product-info">
-                        <h3>Classic Low</h3>
-                        <p>Casual Collection</p>
-                        <strong>Rs. 5,200</strong>
-                        <a href="#contact" class="product-btn">View Details ↗</a>
-                    </div>
-                </article>
+      <div class="product-grid" id="product-grid">
+        <!-- Products will be added by JavaScript -->
+      </div>
+    </section>
 
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
-                        alt="Modern lifestyle sneakers">
-                    <div class="product-info">
-                        <h3>Urban Flex</h3>
-                        <p>Street Collection</p>
-                        <strong>Rs. 6,000</strong>
-                        <a href="#contact" class="product-btn">View Details ↗</a>
-                    </div>
-                </article>
-            </div>
-            <p class="note">Demo products and prices for practice only.</p>
-        </section>
+    <section class="about-section" id="about">
+      <p class="eyebrow">MORE THAN JUST SNEAKERS</p>
+      <h2>Walk your own way.</h2>
+      <p>SoleStreet brings sneaker style and everyday comfort together.</p>
+    </section>
+  </main>
 
-        <section class="about" id="about">
-            <p class="tag">THE SOLESTREET STORY</p>
-            <h2>Your style.<br>Your <span>rules.</span></h2>
-            <p>
-                SoleStreet is a sneaker store concept made for people
-                who love everyday comfort and street style.
-            </p>
-        </section>
+  <footer>
+    <a class="logo" href="#">SOLE<span>STREET.</span></a>
+    <p>Find your style. Own your street.</p>
+    <p>© 2026 SoleStreet. All rights reserved.</p>
+  </footer>
 
-        <section class="contact" id="contact">
-            <p class="tag">NEED HELP?</p>
-            <h2>Let's talk sneakers.</h2>
-            <p>Contact us to ask about products and availability.</p>
-            <a href="mailto:hello@solestreet.example" class="btn">
-                Contact Us ↗
-            </a>
-            <p class="note">Demo store — no real purchases available.</p>
-        </section>
-    </main>
+  <div class="cart-overlay" id="cart-overlay"></div>
 
-    <footer>
-        <a href="#home" class="logo">SOLE<span>STREET.</span></a>
-        <p>© 2026 SoleStreet · Student practice project</p>
-    </footer>
+  <aside class="cart-panel" id="cart-panel" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Bag <span id="cart-heading-count">(0)</span></h2>
+      <button id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <p class="empty-cart">Your bag is empty. Find your next pair!</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cart-total">Rs. 0</strong>
+      </div>
+      <button class="checkout-button" id="checkout-button">
+        CONTINUE TO CHECKOUT →
+      </button>
+      <p class="cart-note">Demo store — no real payment is collected.</p>
+    </div>
+  </aside>
 
 </body>
 </html>
